@@ -83,11 +83,11 @@
   --header-nav-link: rgba(255, 255, 255, 0.85);
   --header-nav-active: #38bdf8;
 
-  --bg-main: #070e1c;
-  --bg-surface: #0e1b30;
-  --bg-surface-elevated: #132440;
-  --bg-surface-alt: #162a4a;
-  --bg-dark-section: #050b16;
+  --bg-main: transparent;
+  --bg-surface: rgba(14, 27, 48, 0.5);
+  --bg-surface-elevated: rgba(19, 36, 64, 0.6);
+  --bg-surface-alt: rgba(22, 42, 74, 0.6);
+  --bg-dark-section: transparent;
 
   --border-color: #1e3557;
   --border-color-dark: #2d4a77;
@@ -2259,4 +2259,88 @@ html[dir="rtl"][data-theme="light"] .mobile-drawer {
   .nl-input-row .btn {
     width: 100%;
   }
+}
+
+/* --- Interactive 3D Background (Body Level) --- */
+[data-theme="light"] #interactive-bg {
+  display: none !important;
+}
+
+#interactive-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background-color: #050b16; /* Deep base color */
+  z-index: -1;
+}
+
+.ibg-grid {
+  position: absolute;
+  inset: -10%;
+  width: 120%;
+  height: 120%;
+  background-size: 30px 30px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  z-index: 2;
+  will-change: transform;
+  transform: translate3d(calc(var(--mouseX, 0) * -25px), calc(var(--mouseY, 0) * -25px), 0);
+}
+
+.ibg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.55;
+  z-index: 1;
+  will-change: transform;
+}
+
+/* Colors matching the deep teal/violet/blue aesthetic */
+.orb-1 {
+  width: 800px;
+  height: 800px;
+  background: #312e81; /* Deep Indigo */
+  top: -150px;
+  left: -150px;
+  animation: floatOrb1 20s infinite ease-in-out alternate;
+}
+
+.orb-2 {
+  width: 1000px;
+  height: 1000px;
+  background: #0f766e; /* Deep Teal */
+  bottom: -200px;
+  right: -200px;
+  animation: floatOrb2 25s infinite ease-in-out alternate-reverse;
+}
+
+.orb-3 {
+  width: 700px;
+  height: 700px;
+  background: #4c1d95; /* Deep Violet */
+  top: 25%;
+  left: 20%;
+  animation: floatOrb3 22s infinite ease-in-out alternate;
+}
+
+@keyframes floatOrb1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(150px, 200px) scale(1.15); }
+}
+@keyframes floatOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-200px, -150px) scale(1.2); }
+}
+@keyframes floatOrb3 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(250px, -250px) scale(0.9); }
+}
+
+/* Ensure body and certain sections let the background show through */
+[data-theme="dark"] body,
+[data-theme="dark"] .services-section,
+[data-theme="dark"] .why-us-section,
+[data-theme="dark"] .newsletter-band {
+  background: transparent !important;
+  background-color: transparent !important;
 }

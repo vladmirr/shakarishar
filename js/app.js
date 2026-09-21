@@ -6,7 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // State
   let currentLang = localStorage.getItem('shakari_lang') || 'en';
-  let currentTheme = localStorage.getItem('shakari_theme') || 'light';
+  let currentTheme = localStorage.getItem('shakari_theme') || 'dark';
   let currentSlide = 0;
   let slideInterval = null;
   const slideDuration = 6000;
@@ -466,6 +466,19 @@ document.addEventListener('DOMContentLoaded', () => {
       toast.style.transition = 'all 0.3s ease';
       setTimeout(() => toast.remove(), 300);
     }, 4500);
+  }
+
+  /* ==========================================================================
+     INTERACTIVE 3D BACKGROUND (PARALLAX)
+     ========================================================================== */
+  const interactiveBg = document.getElementById('interactive-bg');
+  if (interactiveBg) {
+    document.addEventListener('mousemove', (e) => {
+      const deltaX = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+      const deltaY = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+      interactiveBg.style.setProperty('--mouseX', deltaX);
+      interactiveBg.style.setProperty('--mouseY', deltaY);
+    });
   }
 
   // Initialize
