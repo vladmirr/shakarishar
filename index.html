@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shakari Shar | Mining, Steel Equipment & Spare Parts Supply</title>
+  <meta name="description" content="Shakari Shar supplies heavy equipment, precision spare parts, and premium raw materials to the mining and iron & steel industries across Sulaymaniyah, Iraq, and internationally." />
+  <meta name="keywords" content="Shakari Shar, Mining Equipment Iraq, Steel Industry Supply, Sulaymaniyah, Spare Parts, Metallurgy, Crushers, Shusha Trade Building" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shakari Shar | Mining, Steel Equipment & Spare Parts Supply" />
+  <meta property="og:description" content="Direct supply of heavy machinery, certified spare parts, and high-grade raw materials for mining and metallurgical plants." />
+  <meta property="og:image" content="images/card_back.png" />
+  <meta property="og:site_name" content="Shakari Shar" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" />
+
+  <!-- Site Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="nav-inner">
+        
+        <!-- Brand Link -->
+        <a href="#home" class="brand-link" aria-label="Shakari Shar Homepage">
+          <img src="images/logo_light.png" alt="Shakari Shar Logo" class="brand-logo-img" id="siteHeaderLogo" />
+          <div class="brand-text-block">
+            <span class="brand-title" data-i18n="brandName">SHAKARI SHAR</span>
+            <span class="brand-subtitle-text" data-i18n="brandSubtitle">Industrial &amp; Mining Solutions</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav aria-label="Primary Navigation">
+          <ul class="desktop-nav">
+            <li><a href="#home" class="nav-item-link active" data-i18n="nav.home">Home</a></li>
+            <li><a href="#about" class="nav-item-link" data-i18n="nav.about">About Us</a></li>
+            <li><a href="#services" class="nav-item-link" data-i18n="nav.services">Services</a></li>
+            <li><a href="#equipment" class="nav-item-link" data-i18n="nav.equipment">Equipment &amp; Products</a></li>
+            <li><a href="#why-us" class="nav-item-link" data-i18n="nav.whyUs">Why Us</a></li>
+            <li><a href="#contact" class="nav-item-link" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Side Nav Actions -->
+        <div class="nav-actions">
+          
+          <!-- Theme Toggle (Dark / Light) -->
+          <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Light / Dark Mode">
+            <span class="theme-icon" id="themeIcon">🌙</span>
+          </button>
+
+          <!-- Multilingual Selector -->
+          <div class="lang-dropdown" id="langDropdown">
+            <button type="button" class="lang-btn" id="langToggleBtn" aria-label="Select Language" aria-haspopup="true">
+              <span id="currentLangLabel">English</span>
+              <span class="lang-caret">&#9662;</span>
+            </button>
+            <ul class="lang-menu" id="langMenu">
+              <li>
+                <button type="button" class="lang-option-btn active" data-lang="en">
+                  <span>English</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="lang-option-btn" data-lang="ar">
+                  <span>العربية</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="lang-option-btn" data-lang="ku">
+                  <span>کوردی</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Get a Quote Button -->
+          <a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav.getQuote">Get a Quote</a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul class="mobile-drawer-links">
+      <li><a href="#home" class="mobile-drawer-link" data-i18n="nav.home">Home</a></li>
+      <li><a href="#about" class="mobile-drawer-link" data-i18n="nav.about">About Us</a></li>
+      <li><a href="#services" class="mobile-drawer-link" data-i18n="nav.services">Services</a></li>
+      <li><a href="#equipment" class="mobile-drawer-link" data-i18n="nav.equipment">Equipment &amp; Products</a></li>
+      <li><a href="#why-us" class="mobile-drawer-link" data-i18n="nav.whyUs">Why Us</a></li>
+      <li><a href="#contact" class="mobile-drawer-link" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="mobile-theme-row">
+      <span data-i18n="nav.themeLabel">Appearance</span>
+      <button type="button" class="theme-toggle-btn" id="mobileThemeToggleBtn" aria-label="Toggle Dark or Light Mode">
+        <span class="theme-icon" id="mobileThemeIcon">🌙</span>
+        <span id="mobileThemeText">Dark Mode</span>
+      </button>
+    </div>
+    <div style="margin-top: 1rem;">
+      <a href="#contact" class="btn btn-primary btn-block" data-i18n="nav.getQuote">Get a Quote</a>
+    </div>
+  </div>
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+
+  <!-- ==========================================================================
+       HERO SLIDER SECTION
+       ========================================================================== -->
+  <section class="hero-slider-section" id="heroSection">
+    
+    <!-- Slide 1: Mining & Heavy Machinery -->
+    <div class="hero-slide active">
+      <div class="hero-slide-bg" style="background-image: url('images/hero_mining.jpg');"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content-wrap">
+        <div class="hero-copy">
+          <div class="hero-badge-pill">
+            <span class="hero-badge-dot"></span>
+            <span data-i18n="hero.badge">Trusted Regional &amp; Global Industrial Supply</span>
+          </div>
+          <h1 class="hero-headline" data-i18n="hero.slide1.title">Powerful Solutions with Shakari Shar</h1>
+          <p class="hero-lead" data-i18n="hero.slide1.lead">Direct supply of heavy machinery, certified spare parts, and high-grade raw materials for the mining and iron &amp; steel industries.</p>
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary" data-i18n="hero.slide1.btnServices">Explore Services</a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="hero.slide1.btnQuote">Request a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Steel Mill & Manufacturing -->
+    <div class="hero-slide">
+      <div class="hero-slide-bg" style="background-image: url('images/hero_steel.jpg');"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content-wrap">
+        <div class="hero-copy">
+          <div class="hero-badge-pill">
+            <span class="hero-badge-dot"></span>
+            <span data-i18n="hero.badge">Trusted Regional &amp; Global Industrial Supply</span>
+          </div>
+          <h2 class="hero-headline" data-i18n="hero.slide2.title">Your Trusted Partner in Industrial Growth</h2>
+          <p class="hero-lead" data-i18n="hero.slide2.lead">Tailored procurement, rapid logistics, and turnkey engineering support across Iraq and international markets.</p>
+          <div class="hero-actions">
+            <a href="#about" class="btn btn-primary" data-i18n="hero.slide2.btnAbout">About Shakari Shar</a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="hero.slide2.btnContact">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Spare Parts & Logistics -->
+    <div class="hero-slide">
+      <div class="hero-slide-bg" style="background-image: url('images/hero_logistics.jpg');"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content-wrap">
+        <div class="hero-copy">
+          <div class="hero-badge-pill">
+            <span class="hero-badge-dot"></span>
+            <span data-i18n="hero.badge">Trusted Regional &amp; Global Industrial Supply</span>
+          </div>
+          <h2 class="hero-headline" data-i18n="hero.slide3.title">Uncompromising Quality &amp; Engineering Precision</h2>
+          <p class="hero-lead" data-i18n="hero.slide3.lead">From quarry crushers to steel mill components, we ensure seamless operational continuity with 24/7 technical readiness.</p>
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary" data-i18n="hero.slide3.btnServices">Our Solutions</a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="hero.slide3.btnQuote">Consult an Expert</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Controls -->
+    <button type="button" class="slider-arrow prev" id="sliderPrev" aria-label="Previous Slide">&#10094;</button>
+    <button type="button" class="slider-arrow next" id="sliderNext" aria-label="Next Slide">&#10095;</button>
+
+    <!-- Slider Indicator Dots -->
+    <div class="slider-dots">
+      <button type="button" class="slider-dot active" aria-label="Go to slide 1"></button>
+      <button type="button" class="slider-dot" aria-label="Go to slide 2"></button>
+      <button type="button" class="slider-dot" aria-label="Go to slide 3"></button>
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       STATS SECTION
+       ========================================================================== -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-card-container">
+        
+        <div class="stat-box">
+          <div class="stat-number" data-i18n="stats.stat1Num">100%</div>
+          <div class="stat-label" data-i18n="stats.stat1Lbl">Solution-Oriented Approach</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-number" data-i18n="stats.stat2Num">24/7</div>
+          <div class="stat-label" data-i18n="stats.stat2Lbl">Field Support &amp; Site Readiness</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-number" data-i18n="stats.stat3Num">HSE</div>
+          <div class="stat-label" data-i18n="stats.stat3Lbl">Safety &amp; Quality First Priority</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-number" data-i18n="stats.stat4Num">IRQ+</div>
+          <div class="stat-label" data-i18n="stats.stat4Lbl">National &amp; Global Supply Network</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT US SECTION
+       ========================================================================== -->
+  <section class="section-pad" id="about">
+    <div class="container">
+      
+      <div class="about-grid">
+        
+        <div class="about-text-content">
+          <span class="eyebrow" data-i18n="about.eyebrow">ABOUT SHAKARI SHAR</span>
+          <h2 class="section-title" data-i18n="about.title">Pioneering Industrial Supply &amp; Engineering Excellence</h2>
+          <p data-i18n="about.p1">Shakari Shar is a specialized industrial supplier operating at the forefront of the mining and iron &amp; steel sectors. Based in Sulaymaniyah with an active international supply network, we analyze on-site industrial demands with rigorous discipline, precision engineering, and a corporate dedication to excellence.</p>
+          <p data-i18n="about.p2">Our core mission is to empower mining operations and heavy metallurgical plants by delivering high-performance machinery, certified wear parts, specialized consumables, and turnkey technical support.</p>
+          <p data-i18n="about.p3">Built on principles of integrity, reliability, and technical competence, Shakari Shar is the trusted bridge between world-class manufacturers and heavy industrial enterprises across Iraq and the wider region.</p>
+        </div>
+
+        <div class="about-media-stack">
+          <img src="images/about_engineers.jpg" alt="Shakari Shar Engineering Team" class="about-main-img" />
+          <div class="about-floating-card">
+            <div class="about-floating-title">Sulaymaniyah Headquarters</div>
+            <div class="about-floating-desc">Shusha Trade Building, Floor 4, Office 18. Providing responsive supply logistics across Iraq and Kurdistan.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mission & Vision Cards -->
+      <div class="mission-vision-grid">
+        
+        <div class="mv-card">
+          <div class="mv-icon-badge">&#9672;</div>
+          <h3 class="mv-title" data-i18n="about.missionTitle">Our Mission</h3>
+          <p class="mv-desc" data-i18n="about.missionDesc">To provide our partners with elite, reliable, and swift industrial supply solutions—delivering heavy machinery, laboratory testing gear, and wear components that consistently surpass operational targets.</p>
+        </div>
+
+        <div class="mv-card vision">
+          <div class="mv-icon-badge">&#9670;</div>
+          <h3 class="mv-title" data-i18n="about.visionTitle">Our Vision</h3>
+          <p class="mv-desc" data-i18n="about.visionDesc">To be the premier, most trusted brand for mining, metallurgy, and industrial equipment supply in Iraq and internationally, recognized for technical innovation, speed, and safety.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SERVICES SECTION
+       ========================================================================== -->
+  <section class="section-pad services-section" id="services">
+    <div class="container">
+      
+      <div class="section-head center">
+        <span class="eyebrow" data-i18n="services.eyebrow">COMPREHENSIVE CAPABILITIES</span>
+        <h2 class="section-title" data-i18n="services.title">Our Specialized Industrial Services</h2>
+        <p class="section-subtitle" data-i18n="services.subtitle">Engineered solutions tailored to the exacting demands of mining and metallurgical facilities.</p>
+      </div>
+
+      <div class="services-grid">
+        
+        <!-- Service 1 -->
+        <div class="service-card" data-service="s1">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+          </div>
+          <h3 class="service-card-title" data-i18n="services.s1.title">Consulting &amp; Plant Design</h3>
+          <p class="service-card-desc" data-i18n="services.s1.desc">Comprehensive engineering assessments, flow-sheet optimization, and tailored technical layout design for mining and steel production facilities.</p>
+          <span class="service-card-link"><span data-i18n="services.viewDetails">View Details</span> <span class="arrow-icon">&rarr;</span></span>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card" data-service="s2">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8l-9-5-9 5 9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+          </div>
+          <h3 class="service-card-title" data-i18n="services.s2.title">Procurement &amp; Custom Production</h3>
+          <p class="service-card-desc" data-i18n="services.s2.desc">Precision manufacturing and certified procurement of heavy structural components, forgings, castings, and metallurgical consumables.</p>
+          <span class="service-card-link"><span data-i18n="services.viewDetails">View Details</span> <span class="arrow-icon">&rarr;</span></span>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card" data-service="s3">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="7" width="13" height="10" rx="1"/><path d="M14 10h4l3 3v4h-7"/><circle cx="6" cy="19" r="1.6"/><circle cx="17" cy="19" r="1.6"/></svg>
+          </div>
+          <h3 class="service-card-title" data-i18n="services.s3.title">Commissioning &amp; Plant Integration</h3>
+          <p class="service-card-desc" data-i18n="services.s3.desc">Seamless on-site installation, electromechanical calibration, system integration, and trial operation oversight.</p>
+          <span class="service-card-link"><span data-i18n="services.viewDetails">View Details</span> <span class="arrow-icon">&rarr;</span></span>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card" data-service="s4">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="9" width="20" height="6" rx="1"/><path d="M6 9v3M10 9v3M14 9v3M18 9v3"/></svg>
+          </div>
+          <h3 class="service-card-title" data-i18n="services.s4.title">Technical Training &amp; Site Safety</h3>
+          <p class="service-card-desc" data-i18n="services.s4.desc">Professional workforce certification, equipment operational training, and adherence to international occupational health &amp; safety standards.</p>
+          <span class="service-card-link"><span data-i18n="services.viewDetails">View Details</span> <span class="arrow-icon">&rarr;</span></span>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card" data-service="s5">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3l7 7-2 2-7-7Z"/><path d="M14 10 4 20l-1 1 1-4Z"/><path d="M17 6l2-2"/></svg>
+          </div>
+          <h3 class="service-card-title" data-i18n="services.s5.title">Maintenance &amp; Rapid Field Support</h3>
+          <p class="service-card-desc" data-i18n="services.s5.desc">24/7 on-call technical assistance, scheduled preventive maintenance, diagnostic vibration analysis, and emergency repairs.</p>
+          <span class="service-card-link"><span data-i18n="services.viewDetails">View Details</span> <span class="arrow-icon">&rarr;</span></span>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card" data-service="s6">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21h6"/><path d="M12 21v-4"/><path d="M7 17h10"/><circle cx="12" cy="9" r="3"/><path d="M10 6l4-3M9 12l-3 4"/></svg>
+          </div>
+          <h3 class="service-card-title" data-i18n="services.s6.title">Equipment &amp; Heavy Spare Parts Supply</h3>
+          <p class="service-card-desc" data-i18n="services.s6.desc">Direct supply of jaw crushers, cone crushers, vibrating screens, conveyor systems, mill liners, slurry pumps, and drive units.</p>
+          <span class="service-card-link"><span data-i18n="services.viewDetails">View Details</span> <span class="arrow-icon">&rarr;</span></span>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="service-card" data-service="s7">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V10l6 4v-4l6 4v-4l6 4v7Z"/><path d="M7 21v-4M13 21v-4"/></svg>
+          </div>
+          <h3 class="service-card-title" data-i18n="services.s7.title">Engineering Efficiency Optimization</h3>
+          <p class="service-card-desc" data-i18n="services.s7.desc">Advanced metallurgical analysis, process bottleneck elimination, and energy-saving mechanical engineering upgrades.</p>
+          <span class="service-card-link"><span data-i18n="services.viewDetails">View Details</span> <span class="arrow-icon">&rarr;</span></span>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="service-card" data-service="s8">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 10h18M3 14h18M9 6v12M15 6v12"/></svg>
+          </div>
+          <h3 class="service-card-title" data-i18n="services.s8.title">Quality Certification &amp; Documentation</h3>
+          <p class="service-card-desc" data-i18n="services.s8.desc">Complete mill test certificates (MTC), non-destructive testing (NDT) reports, ISO compliance documentation, and customs compliance.</p>
+          <span class="service-card-link"><span data-i18n="services.viewDetails">View Details</span> <span class="arrow-icon">&rarr;</span></span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       EQUIPMENT & PRODUCT CATEGORIES
+       ========================================================================== -->
+  <section class="section-pad" id="equipment">
+    <div class="container">
+      
+      <div class="section-head center">
+        <span class="eyebrow" data-i18n="equipment.eyebrow">CATALOGUE OVERVIEW</span>
+        <h2 class="section-title" data-i18n="equipment.title">Key Product &amp; Supply Categories</h2>
+        <p class="section-subtitle" data-i18n="equipment.subtitle">High-grade industrial components engineered to withstand extreme mechanical stress and thermal fatigue.</p>
+      </div>
+
+      <div class="equipment-grid">
+        
+        <div class="equip-card">
+          <div class="equip-number-tag">01</div>
+          <h3 class="equip-title" data-i18n="equipment.cat1">Crushing &amp; Screening</h3>
+          <p class="equip-desc" data-i18n="equipment.cat1Desc">Jaw plates, cone mantles, concaves, screen meshes, and heavy impact blow bars.</p>
+        </div>
+
+        <div class="equip-card">
+          <div class="equip-number-tag">02</div>
+          <h3 class="equip-title" data-i18n="equipment.cat2">Milling &amp; Grinding</h3>
+          <p class="equip-desc" data-i18n="equipment.cat2Desc">Forged and cast steel grinding balls, high-chromium mill liners, and trunnion bearings.</p>
+        </div>
+
+        <div class="equip-card">
+          <div class="equip-number-tag">03</div>
+          <h3 class="equip-title" data-i18n="equipment.cat3">Conveying &amp; Bulk Handling</h3>
+          <p class="equip-desc" data-i18n="equipment.cat3Desc">Heavy heat-resistant rubber belts, rollers, idlers, pulleys, and automated belt scrapers.</p>
+        </div>
+
+        <div class="equip-card">
+          <div class="equip-number-tag">04</div>
+          <h3 class="equip-title" data-i18n="equipment.cat4">Raw Materials &amp; Metallurgy</h3>
+          <p class="equip-desc" data-i18n="equipment.cat4Desc">Direct reduced iron (DRI), ferrosilicon, silico-manganese, refractories, and graphite electrodes.</p>
+        </div>
+
+        <div class="equip-card">
+          <div class="equip-number-tag">05</div>
+          <h3 class="equip-title" data-i18n="equipment.cat5">Pumps &amp; Fluid Handling</h3>
+          <p class="equip-desc" data-i18n="equipment.cat5Desc">Heavy duty slurry pumps, rubber lined impellers, mechanical seals, and high-pressure industrial valves.</p>
+        </div>
+
+        <div class="equip-card">
+          <div class="equip-number-tag">06</div>
+          <h3 class="equip-title" data-i18n="equipment.cat6">Lab &amp; Testing Gear</h3>
+          <p class="equip-desc" data-i18n="equipment.cat6Desc">XRF/XRD spectrometers, moisture analyzers, jaw sample crushers, and tensile testing apparatus.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WHY CHOOSE SHAKARI SHAR
+       ========================================================================== -->
+  <section class="section-pad why-us-section" id="why-us">
+    <div class="container">
+      
+      <div class="section-head center">
+        <span class="eyebrow" data-i18n="whyUs.eyebrow">THE SHAKARI SHAR ADVANTAGE</span>
+        <h2 class="section-title" data-i18n="whyUs.title">Why Industry Leaders Partner With Us</h2>
+      </div>
+
+      <div class="why-grid">
+        
+        <div class="why-card">
+          <div class="why-icon-box">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="why-title" data-i18n="whyUs.point1Title">Direct Manufacturer Sourcing</h3>
+          <p class="why-desc" data-i18n="whyUs.point1Desc">We eliminate intermediaries by dealing directly with certified ISO-compliant foundries and heavy machinery manufacturers worldwide.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon-box">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3 class="why-title" data-i18n="whyUs.point2Title">Fast Logistics to Iraq &amp; Kurdistan</h3>
+          <p class="why-desc" data-i18n="whyUs.point2Desc">Strategic location in Sulaymaniyah allows agile customs clearance, bonded warehousing, and rapid doorstep delivery across Iraq.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon-box">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3 class="why-title" data-i18n="whyUs.point3Title">Rigorous Quality Assurance</h3>
+          <p class="why-desc" data-i18n="whyUs.point3Desc">Every component is independently inspected for dimensional tolerance, hardness (HRC/HB), chemical metallurgy, and ultrasonic integrity.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon-box">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3 class="why-title" data-i18n="whyUs.point4Title">Full Engineering Lifecycle Support</h3>
+          <p class="why-desc" data-i18n="whyUs.point4Desc">From initial specification drafting through commissioning, spare parts supply, and lifecycle maintenance, we are your end-to-end partner.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT & QUOTE SECTION
+       ========================================================================== -->
+  <section class="section-pad" id="contact">
+    <div class="container">
+      
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="contact.eyebrow">GET IN TOUCH</span>
+        <h2 class="section-title" data-i18n="contact.title">Contact Our Engineering &amp; Procurement Team</h2>
+        <p class="section-subtitle" style="margin-left: 0;" data-i18n="contact.subtitle">Have a requirement or need an immediate quote? Our team in Sulaymaniyah is ready to assist you.</p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Left Column: Business Card & Office Info -->
+        <div class="office-info-card">
+          
+          <!-- Virtual Business Card Representation -->
+          <div class="business-card-preview">
+            <div class="bc-header">
+              <span class="bc-logo-text">SHAKARI SHAR</span>
+              <span class="bc-badge" data-i18n="contact.cardBadge">Business Card</span>
+            </div>
+            <span class="bc-phone-highlight">+964 776 680 9715</span>
+            <span class="bc-web">WWW.SHAKARISHAR.COM</span>
+            <p class="bc-addr">SULAYMANIYAH - SHUSHA TRADE BUILDING<br>FLOOR 4 - OFFICE NO :18</p>
+          </div>
+
+          <!-- Contact Channels List -->
+          <div class="contact-channels">
+            
+            <div class="channel-item">
+              <div class="channel-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="channel-label" data-i18n="contact.phoneLbl">Phone &amp; Mobile</div>
+                <div class="channel-val"><a href="tel:+9647766809715">+964 776 680 9715</a></div>
+              </div>
+            </div>
+
+            <div class="channel-item">
+              <div class="channel-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="channel-label" data-i18n="contact.emailLbl">Direct Email</div>
+                <div class="channel-val"><a href="mailto:danamahjad@gmail.com">danamahjad@gmail.com</a></div>
+              </div>
+            </div>
+
+            <div class="channel-item">
+              <div class="channel-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="channel-label" data-i18n="contact.addrLbl">Corporate Office</div>
+                <div class="channel-val" data-i18n="contact.addrVal">Sulaymaniyah – Shusha Trade Building, Floor 4 – Office No: 18, Kurdistan Region, Iraq</div>
+              </div>
+            </div>
+
+            <div class="channel-item">
+              <div class="channel-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="channel-label" data-i18n="contact.hoursLbl">Business Hours</div>
+                <div class="channel-val" data-i18n="contact.hoursVal">Sunday – Thursday: 09:00 AM – 05:00 PM (Emergency 24/7 on call)</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="quick-contact-actions">
+            <a href="tel:+9647766809715" class="btn btn-outline" data-i18n="contact.callNow">Call Office</a>
+            <a href="https://wa.me/9647766809715" class="btn btn-whatsapp js-whatsapp-link" data-i18n="contact.chatWhatsapp">WhatsApp Inquiries</a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Formal Quote & Contact Form -->
+        <div class="quote-form-wrap">
+          
+          <div class="form-head">
+            <h3 class="form-title" data-i18n="contact.formTitle">Request a Formal Quote</h3>
+            <p class="form-subtitle" data-i18n="contact.formSub">Submit your technical requirements or bill of quantities (BOQ). We will respond promptly.</p>
+          </div>
+
+          <form id="quoteForm" novalidate>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fieldName" class="form-label" data-i18n="contact.fieldName">Full Name *</label>
+                <input type="text" id="fieldName" name="name" class="form-input" required placeholder="John Doe" data-i18n-placeholder="contact.fieldName" />
+              </div>
+              <div class="form-group">
+                <label for="fieldCompany" class="form-label" data-i18n="contact.fieldCompany">Company / Organization</label>
+                <input type="text" id="fieldCompany" name="company" class="form-input" placeholder="Mining Corp LLC" data-i18n-placeholder="contact.fieldCompany" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fieldEmail" class="form-label" data-i18n="contact.fieldEmail">Email Address *</label>
+                <input type="email" id="fieldEmail" name="email" class="form-input" required placeholder="name@company.com" data-i18n-placeholder="contact.fieldEmail" />
+              </div>
+              <div class="form-group">
+                <label for="fieldPhone" class="form-label" data-i18n="contact.fieldPhone">Phone / Mobile Number</label>
+                <input type="tel" id="fieldPhone" name="phone" class="form-input" placeholder="+964 77X XXX XXXX" data-i18n-placeholder="contact.fieldPhone" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="fieldService" class="form-label" data-i18n="contact.fieldService">Interested Service / Equipment Category</label>
+              <select id="fieldService" name="service" class="form-select">
+                <option value="" data-i18n="contact.fieldServiceDefault">Select service or product...</option>
+                <option value="s1">Consulting &amp; Plant Design</option>
+                <option value="s2">Procurement &amp; Custom Production</option>
+                <option value="s3">Commissioning &amp; Plant Integration</option>
+                <option value="s4">Technical Training &amp; Site Safety</option>
+                <option value="s5">Maintenance &amp; Rapid Field Support</option>
+                <option value="s6">Equipment &amp; Heavy Spare Parts Supply</option>
+                <option value="s7">Engineering Efficiency Optimization</option>
+                <option value="s8">Quality Certification &amp; Documentation</option>
+                <option value="crushing">Crushing &amp; Screening Machinery</option>
+                <option value="milling">Milling Liners &amp; Grinding Balls</option>
+                <option value="rawmaterials">Raw Materials &amp; Ferroalloys</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="fieldMsg" class="form-label" data-i18n="contact.fieldMsg">Detailed Requirements / Specifications *</label>
+              <textarea id="fieldMsg" name="message" class="form-textarea" required placeholder="Please describe required part numbers, technical drawings, material grades, or requested quantities..."></textarea>
+            </div>
+
+            <label class="form-consent">
+              <input type="checkbox" id="fieldConsent" required checked />
+              <span data-i18n="contact.fieldConsent">I confirm that the submitted information is accurate for the purpose of receiving commercial quotations.</span>
+            </label>
+
+            <button type="submit" class="btn btn-primary btn-block" id="btnFormSubmit" data-i18n="contact.btnSubmit">Submit Quote Request</button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       NEWSLETTER BAND
+       ========================================================================== -->
+  <section class="newsletter-band">
+    <div class="container">
+      <div class="nl-container">
+        
+        <div class="nl-text-side">
+          <span class="eyebrow" style="background: rgba(255,255,255,0.15); color:#ffffff;" data-i18n="newsletter.eyebrow">STAY INFORMED</span>
+          <h2 class="nl-title" data-i18n="newsletter.title">Subscribe to Industrial Supply Updates</h2>
+          <p class="nl-desc" data-i18n="newsletter.desc">Receive technical updates, newly stocked equipment parts, and metallurgical market insights directly to your inbox.</p>
+        </div>
+
+        <div class="nl-form-side">
+          <form id="newsletterForm">
+            <div class="nl-input-row">
+              <input type="email" class="nl-input" id="nlEmail" required placeholder="Enter your corporate email address" data-i18n-placeholder="newsletter.placeholder" />
+              <button type="submit" class="btn btn-primary" data-i18n="newsletter.btnSubscribe">Subscribe</button>
+            </div>
+            <label class="nl-consent-text">
+              <input type="checkbox" required checked />
+              <span data-i18n="newsletter.consent">I agree to receive industrial technical updates and commercial communications.</span>
+            </label>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Brand Col -->
+        <div class="footer-brand-col">
+          <a href="#home" class="footer-brand-link">
+            <img src="images/logo_dark.png" alt="Shakari Shar Logo" class="footer-brand-logo" id="siteFooterLogo" />
+            <span class="footer-brand-title" data-i18n="brandName">SHAKARI SHAR</span>
+          </a>
+          <p class="footer-desc" data-i18n="footer.aboutText">Shakari Shar is a premier industrial supply and engineering solutions provider for the mining, metallurgy, and iron &amp; steel industries. Headquartered in Sulaymaniyah, Iraq.</p>
+          <div style="font-size: 0.9rem; line-height: 1.6;">
+            <div><strong>Tel:</strong> <a href="tel:+9647766809715" style="color:#e2e8f0;">+964 776 680 9715</a></div>
+            <div><strong>Email:</strong> <a href="mailto:danamahjad@gmail.com" style="color:#e2e8f0;">danamahjad@gmail.com</a></div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.quickLinks">Quick Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home" class="footer-link" data-i18n="nav.home">Home</a></li>
+            <li><a href="#about" class="footer-link" data-i18n="nav.about">About Us</a></li>
+            <li><a href="#services" class="footer-link" data-i18n="nav.services">Services</a></li>
+            <li><a href="#equipment" class="footer-link" data-i18n="nav.equipment">Equipment &amp; Products</a></li>
+            <li><a href="#why-us" class="footer-link" data-i18n="nav.whyUs">Why Us</a></li>
+            <li><a href="#contact" class="footer-link" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Solutions -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.servicesTitle">Core Solutions</h4>
+          <ul class="footer-links-list">
+            <li><a href="#services" class="footer-link" data-i18n="services.s1.title">Consulting &amp; Design</a></li>
+            <li><a href="#services" class="footer-link" data-i18n="services.s2.title">Procurement &amp; Production</a></li>
+            <li><a href="#services" class="footer-link" data-i18n="services.s3.title">Commissioning &amp; Integration</a></li>
+            <li><a href="#services" class="footer-link" data-i18n="services.s6.title">Heavy Spare Parts Supply</a></li>
+            <li><a href="#services" class="footer-link" data-i18n="services.s7.title">Efficiency Optimization</a></li>
+          </ul>
+        </div>
+
+        <!-- Compliance & Legal -->
+        <div>
+          <h4 class="footer-heading" data-i18n="footer.legalTitle">Corporate &amp; Compliance</h4>
+          <ul class="footer-links-list">
+            <li><a href="#contact" class="footer-link" data-i18n="footer.privacyPolicy">Privacy Policy</a></li>
+            <li><a href="#contact" class="footer-link" data-i18n="footer.termsOfService">Terms of Service</a></li>
+            <li><a href="#contact" class="footer-link" data-i18n="footer.qualityPolicy">Quality Standards &amp; HSE</a></li>
+            <li><a href="https://wa.me/9647766809715" class="footer-link js-whatsapp-link" style="color: #4ade80;">WhatsApp Direct Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; <span class="current-year">2026</span> <span data-i18n="footer.copyright">All rights reserved. Shakari Shar Industrial &amp; Mining Supply.</span></p>
+        <button type="button" class="back-to-top-btn" id="backToTopBtn">
+          <span data-i18n="footer.backToTop">Back to Top</span> &uarr;
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       INTERACTIVE SERVICE DETAIL MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="serviceModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="modal-icon-badge">&#9881;</div>
+      <h3 class="modal-title" id="modalTitle">Service Title</h3>
+      <p class="modal-body-desc" id="modalDesc">Overview description of the selected service.</p>
+      
+      <div class="modal-specs-box">
+        <div class="modal-specs-title" data-i18n="modal.specsTitle">Key Technical Specifications &amp; Features</div>
+        <p class="modal-specs-text" id="modalSpecs">Detailed technical specs and execution details.</p>
+      </div>
+
+      <button type="button" class="btn btn-primary btn-block" id="modalInquireBtn" data-i18n="modal.actionInquire">Inquire About This Service</button>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/translations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
