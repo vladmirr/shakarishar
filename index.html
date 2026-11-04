@@ -22,8 +22,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" />
 
-  <!-- Site Styles -->
-  <link rel="stylesheet" href="css/style.css" />
+  <!-- Site Styles (with cache-buster) -->
+  <link rel="stylesheet" href="css/style.css?v=3.0" />
 </head>
 <body>
   <!-- 3D Interactive Background -->
@@ -62,11 +62,11 @@
           </ul>
         </nav>
 
-        <!-- Right Side: Language Selector, Theme Toggle, Desktop Quote (>= 1024px), Hamburger Button (< 1024px) -->
+        <!-- Right Side: Desktop Controls (>= 1024px) & Mobile Hamburger (< 1024px) -->
         <div class="nav-actions">
           
-          <!-- Multilingual Selector -->
-          <div class="lang-dropdown" id="langDropdown">
+          <!-- Multilingual Selector (Desktop Only) -->
+          <div class="lang-dropdown desktop-only" id="langDropdown">
             <button type="button" class="lang-btn" id="langToggleBtn" aria-label="Select Language" aria-haspopup="true">
               <span id="currentLangLabel">English</span>
               <span class="lang-caret">&#9662;</span>
@@ -90,15 +90,15 @@
             </ul>
           </div>
 
-          <!-- Theme Toggle (Dark / Light) -->
-          <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Light / Dark Mode">
+          <!-- Theme Toggle (Desktop Only) -->
+          <button type="button" class="theme-toggle-btn desktop-only" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Light / Dark Mode">
             <span class="theme-icon" id="themeIcon">🌙</span>
           </button>
 
-          <!-- Desktop Quote Button (Only visible on 1024px and wider) -->
-          <a href="#contact" class="btn btn-primary btn-sm desktop-quote-btn" data-i18n="nav.getQuote">Get a Quote</a>
+          <!-- Desktop Quote Button (Desktop Only) -->
+          <a href="#contact" class="btn btn-primary btn-sm desktop-quote-btn desktop-only" data-i18n="nav.getQuote">Get a Quote</a>
 
-          <!-- Mobile Hamburger Toggle Button (Only visible under 1024px) -->
+          <!-- Mobile Hamburger Toggle Button (Shown on phone & tablet) -->
           <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -111,7 +111,7 @@
   </header>
 
   <!-- ==========================================================================
-       MOBILE DRAWER / SLIDE-OUT MENU (Full height, slide from right)
+       MOBILE DRAWER MENU (Phone & Tablet Slide-out Drawer)
        ========================================================================== -->
   <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation Drawer" aria-hidden="true">
     <div class="mobile-drawer-header">
@@ -122,7 +122,8 @@
       <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close navigation menu">&times;</button>
     </div>
 
-    <nav class="mobile-drawer-nav" aria-label="Mobile Drawer Navigation">
+    <!-- Mobile Navigation Links -->
+    <nav class="mobile-drawer-nav" aria-label="Mobile Navigation">
       <ul class="mobile-drawer-links">
         <li><a href="#home" class="mobile-drawer-link" data-i18n="nav.home">Home</a></li>
         <li><a href="#about" class="mobile-drawer-link" data-i18n="nav.about">About Us</a></li>
@@ -133,6 +134,39 @@
       </ul>
     </nav>
 
+    <!-- Drawer Controls: Language & Theme -->
+    <div class="mobile-drawer-controls">
+      
+      <!-- Language Selector Row in Drawer -->
+      <div class="drawer-control-group">
+        <span class="drawer-control-label">Language / زمان / اللغة</span>
+        <div class="drawer-lang-selector">
+          <button type="button" class="lang-option-btn drawer-lang-btn active" data-lang="en">
+            <span>English</span>
+          </button>
+          <button type="button" class="lang-option-btn drawer-lang-btn" data-lang="ar">
+            <span>العربية</span>
+          </button>
+          <button type="button" class="lang-option-btn drawer-lang-btn" data-lang="ku">
+            <span>کوردی</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Theme Switcher Row in Drawer -->
+      <div class="drawer-control-group">
+        <div class="mobile-theme-row">
+          <span data-i18n="nav.themeLabel">Appearance</span>
+          <button type="button" class="theme-toggle-btn mobile-theme-toggle" id="mobileThemeToggleBtn" aria-label="Toggle Dark or Light Mode">
+            <span class="theme-icon" id="mobileThemeIcon">🌙</span>
+            <span id="mobileThemeText">Dark Mode</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Drawer Footer: Quote Button & Phone Support -->
     <div class="mobile-drawer-footer">
       <a href="#contact" class="btn btn-primary btn-block drawer-quote-btn" data-i18n="nav.getQuote">Get a Quote</a>
       <div class="mobile-drawer-contact-info">
@@ -773,8 +807,8 @@
     </div>
   </div>
 
-  <!-- JavaScript Modules -->
-  <script src="js/translations.js"></script>
-  <script src="js/app.js"></script>
+  <!-- JavaScript Modules (with cache-buster) -->
+  <script src="js/translations.js?v=3.0"></script>
+  <script src="js/app.js?v=3.0"></script>
 </body>
 </html>
