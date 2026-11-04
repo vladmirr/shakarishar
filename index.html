@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" />
 
   <!-- Site Styles (with cache-buster) -->
-  <link rel="stylesheet" href="css/style.css?v=3.1" />
+  <link rel="stylesheet" href="css/style.css?v=3.2" />
 </head>
 <body>
   <!-- 3D Interactive Background -->
@@ -62,11 +62,16 @@
           </ul>
         </nav>
 
-        <!-- Right Side: Desktop Controls (>= 1024px) & Mobile Hamburger (< 1024px) -->
+        <!-- Right Side: Theme Toggle, Language Selector & Mobile Hamburger -->
         <div class="nav-actions">
           
-          <!-- Multilingual Selector (Desktop Only) -->
-          <div class="lang-dropdown desktop-only" id="langDropdown">
+          <!-- Theme Toggle -->
+          <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Light / Dark Mode">
+            <span class="theme-icon" id="themeIcon">🌙</span>
+          </button>
+
+          <!-- Multilingual Selector -->
+          <div class="lang-dropdown" id="langDropdown">
             <button type="button" class="lang-btn" id="langToggleBtn" aria-label="Select Language" aria-haspopup="true">
               <span id="currentLangLabel">English</span>
               <span class="lang-caret">&#9662;</span>
@@ -89,11 +94,6 @@
               </li>
             </ul>
           </div>
-
-          <!-- Theme Toggle (Desktop Only) -->
-          <button type="button" class="theme-toggle-btn desktop-only" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Light / Dark Mode">
-            <span class="theme-icon" id="themeIcon">🌙</span>
-          </button>
 
           <!-- Mobile Hamburger Toggle Button (Shown on phone & tablet) -->
           <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
@@ -804,7 +804,7 @@
   </div>
 
   <!-- JavaScript Modules (with cache-buster) -->
-  <script src="js/translations.js?v=3.1"></script>
-  <script src="js/app.js?v=3.1"></script>
+  <script src="js/translations.js?v=3.2"></script>
+  <script src="js/app.js?v=3.2"></script>
 </body>
 </html>

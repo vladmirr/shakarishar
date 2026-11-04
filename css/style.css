@@ -2403,12 +2403,29 @@ html[dir="rtl"] .toast-container {
   .nav-actions {
     display: flex;
     align-items: center;
-    gap: 0;
+    gap: 0.45rem;
+  }
+
+  .theme-toggle-btn {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  .lang-btn {
+    min-height: 42px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.84rem;
   }
 
   /* Show hamburger button prominently */
   .mobile-toggle {
     display: inline-flex !important;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
   }
 
   /* Hide slider arrows to prevent content collisions on touch devices */
@@ -2509,10 +2526,10 @@ html[dir="rtl"] .toast-container {
     padding-right: 1rem;
   }
 
-  /* Compact navbar row: Only Logo on Left & Hamburger on Right */
+  /* Compact navbar row: Logo on Left & Consolidated Controls on Right */
   .nav-inner {
     height: 66px;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .brand-link {
@@ -2520,19 +2537,38 @@ html[dir="rtl"] .toast-container {
   }
 
   .brand-logo-img {
-    height: 38px;
+    height: 36px;
   }
 
   .brand-title {
-    font-size: 1.05rem;
+    font-size: 1rem;
     letter-spacing: 0.02em;
   }
 
+  .nav-actions {
+    gap: 0.35rem;
+  }
+
+  .theme-toggle-btn {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    font-size: 1.05rem;
+  }
+
+  .lang-btn {
+    min-height: 38px;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    gap: 0.25rem;
+  }
+
   .mobile-toggle {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
   }
 
   /* Fluid typography and spacing */
@@ -2734,12 +2770,42 @@ html[dir="rtl"] .toast-container {
    EXTRA SMALL MOBILE PHONES (320px - 360px)
    -------------------------------------------------------------------------- */
 @media (max-width: 360px) {
+  .nav-inner {
+    gap: 0.25rem;
+  }
+
   .brand-title {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .brand-logo-img {
-    height: 34px;
+    height: 32px;
+  }
+
+  .nav-actions {
+    gap: 0.25rem;
+  }
+
+  .theme-toggle-btn {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    min-height: 35px;
+    font-size: 0.95rem;
+  }
+
+  .lang-btn {
+    min-height: 35px;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+    gap: 0.2rem;
+  }
+
+  .mobile-toggle {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    min-height: 35px;
   }
 
   .stats-card-container {
