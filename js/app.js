@@ -1,6 +1,6 @@
 /**
  * SHAKARI SHAR - Modern Industrial & Mining Web Application
- * Core Script: Multilingual (EN, AR, KU) with RTL, Hero Slider, Service Modals, Form Submissions
+ * Core Script: Multilingual (EN, AR, KU) with RTL, Hero Slider, Service Modals, Form Submissions, Mobile Drawer Navigation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,10 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentLangLabel = document.getElementById('currentLangLabel');
   const currentLangFlag = document.getElementById('currentLangFlag');
 
+  // Mobile Drawer Elements
   const mobileToggle = document.getElementById('mobileToggle');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const mobileDrawerOverlay = document.getElementById('mobileDrawerOverlay');
-  const mobileNavLinks = document.querySelectorAll('.mobile-drawer-link');
+  const mobileDrawerClose = document.getElementById('mobileDrawerClose');
+  const mobileNavLinks = document.querySelectorAll('.mobile-drawer-link, .drawer-quote-btn');
 
   const slides = document.querySelectorAll('.hero-slide');
   const sliderDots = document.querySelectorAll('.slider-dot');
@@ -64,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function setLanguage(lang) {
-    if (!translations[lang]) lang = 'en';
+    if (typeof translations === 'undefined' || !translations[lang]) lang = 'en';
     currentLang = lang;
     localStorage.setItem('shakari_lang', lang);
 
@@ -81,32 +83,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Update document title & meta description
-    const t = translations[lang];
-    if (t.metaTitle) document.title = t.metaTitle;
-    const metaDescTag = document.querySelector('meta[name="description"]');
-    if (metaDescTag && t.metaDesc) metaDescTag.setAttribute('content', t.metaDesc);
+    if (typeof translations !== 'undefined') {
+      const t = translations[lang];
+      if (t) {
+        if (t.metaTitle) document.title = t.metaTitle;
+        const metaDescTag = document.querySelector('meta[name="description"]');
+        if (metaDescTag && t.metaDesc) metaDescTag.setAttribute('content', t.metaDesc);
 
-    // Apply translations to DOM elements with data-i18n attribute
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const keyPath = el.getAttribute('data-i18n');
-      const val = getNestedTranslation(t, keyPath);
-      if (val !== undefined) {
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-          el.placeholder = val;
-        } else {
-          el.innerHTML = val;
-        }
-      }
-    });
+        // Apply translations to DOM elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const keyPath = el.getAttribute('data-i18n');
+          const val = getNestedTranslation(t, keyPath);
+          if (val !== undefined) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+              el.placeholder = val;
+            } else {
+              el.innerHTML = val;
+            }
+          }
+        });
 
-    // Update Placeholders
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-      const keyPath = el.getAttribute('data-i18n-placeholder');
-      const val = getNestedTranslation(t, keyPath);
-      if (val !== undefined) {
-        el.placeholder = val;
+        // Update Placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const keyPath = el.getAttribute('data-i18n-placeholder');
+          const val = getNestedTranslation(t, keyPath);
+          if (val !== undefined) {
+            el.placeholder = val;
+          }
+        });
       }
-    });
+    }
 
     // Update WhatsApp links with language specific message
     updateWhatsAppLinks();
@@ -240,35 +246,77 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     MOBILE DRAWER NAVIGATION
+     MOBILE DRAWER NAVIGATION (SLIDE-OUT MENU)
      ========================================================================== */
-  if (mobileToggle && mobileDrawer && mobileDrawerOverlay) {
-    const toggleDrawer = (open) => {
-      const isOpen = open !== undefined ? open : !mobileDrawer.classList.contains('open');
-      mobileDrawer.classList.toggle('open', isOpen);
+  function toggleDrawer(open) {
+    if (!mobileDrawer) return;
+    const isOpen = open !== undefined ? open : !mobileDrawer.classList.contains('open');
+    mobileDrawer.classList.toggle('open', isOpen);
+    if (mobileToggle) {
       mobileToggle.classList.toggle('active', isOpen);
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    if (mobileDrawerOverlay) {
       mobileDrawerOverlay.classList.toggle('active', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    };
+    }
+    mobileDrawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
 
-    mobileToggle.addEventListener('click', () => toggleDrawer());
-    mobileDrawerOverlay.addEventListener('click', () => toggleDrawer(false));
-
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', () => toggleDrawer(false));
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDrawer();
     });
   }
+
+  if (mobileDrawerClose) {
+    mobileDrawerClose.addEventListener('click', () => toggleDrawer(false));
+  }
+
+  if (mobileDrawerOverlay) {
+    mobileDrawerOverlay.addEventListener('click', () => toggleDrawer(false));
+  }
+
+  // Clicking any link in the drawer closes it automatically
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => toggleDrawer(false));
+  });
+
+  // Global Escape Key Listener
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (mobileDrawer && mobileDrawer.classList.contains('open')) {
+        toggleDrawer(false);
+      }
+      if (langDropdown && langDropdown.classList.contains('open')) {
+        langDropdown.classList.remove('open');
+      }
+      if (serviceModal && serviceModal.classList.contains('open')) {
+        closeServiceModal();
+      }
+    }
+  });
+
+  // Automatically close drawer when resized to desktop (>= 1024px)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && mobileDrawer && mobileDrawer.classList.contains('open')) {
+      toggleDrawer(false);
+    }
+  });
 
   /* ==========================================================================
      STICKY HEADER SHADOW ON SCROLL
      ========================================================================== */
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
 
   /* ==========================================================================
      INTERACTIVE SERVICE DETAILS MODAL
@@ -284,21 +332,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openServiceModal(serviceId) {
     activeServiceId = serviceId;
-    const t = translations[currentLang];
-    const serviceData = t.services && t.services[serviceId];
+    const t = typeof translations !== 'undefined' ? translations[currentLang] : null;
+    const serviceData = t && t.services && t.services[serviceId];
 
-    if (serviceData) {
-      modalTitle.textContent = serviceData.title;
-      modalDesc.textContent = serviceData.desc;
-      modalSpecs.textContent = serviceData.detail;
+    if (serviceData && serviceModal) {
+      if (modalTitle) modalTitle.textContent = serviceData.title;
+      if (modalDesc) modalDesc.textContent = serviceData.desc;
+      if (modalSpecs) modalSpecs.textContent = serviceData.detail;
       serviceModal.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
   }
 
   function closeServiceModal() {
-    serviceModal.classList.remove('open');
-    document.body.style.overflow = '';
+    if (serviceModal) {
+      serviceModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   }
 
   if (modalCloseBtn) {
@@ -311,13 +361,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Escape key closes modal
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && serviceModal && serviceModal.classList.contains('open')) {
-      closeServiceModal();
-    }
-  });
-
   // Modal Inquire Button: Auto-selects service in contact form and scrolls down
   if (modalInquireBtn) {
     modalInquireBtn.addEventListener('click', () => {
@@ -328,7 +371,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const contactSec = document.getElementById('contact');
       if (contactSec) {
         contactSec.scrollIntoView({ behavior: 'smooth' });
-        // Flash subtle highlight on form
         const formWrap = document.querySelector('.quote-form-wrap');
         if (formWrap) {
           formWrap.style.outline = '3px solid #0284c7';
@@ -362,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Indicate loading
       const originalBtnHtml = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.textContent = translations[currentLang]?.contact?.sending || "Sending...";
+      submitBtn.textContent = (typeof translations !== 'undefined' && translations[currentLang]?.contact?.sending) || "Sending...";
 
       const formData = {
         name: nameInput.value.trim(),
@@ -386,14 +428,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.ok) {
-          showToast(translations[currentLang]?.contact?.successMsg || "Inquiry sent successfully to danamahjad@gmail.com!", "success");
+          showToast((typeof translations !== 'undefined' && translations[currentLang]?.contact?.successMsg) || "Inquiry sent successfully to danamahjad@gmail.com!", "success");
           quoteForm.reset();
         } else {
-          // Fallback to mailto link
           triggerMailtoFallback(formData);
         }
       } catch (err) {
-        // Network/CORS fallback to mailto
         triggerMailtoFallback(formData);
       } finally {
         submitBtn.disabled = false;
@@ -415,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mailtoUrl = `mailto:danamahjad@gmail.com?subject=${subject}&body=${body}`;
     window.location.href = mailtoUrl;
 
-    showToast(translations[currentLang]?.contact?.successMsg || "Opening email to danamahjad@gmail.com...", "success");
+    showToast((typeof translations !== 'undefined' && translations[currentLang]?.contact?.successMsg) || "Opening email to danamahjad@gmail.com...", "success");
   }
 
   /* ==========================================================================
