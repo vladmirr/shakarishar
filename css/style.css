@@ -52,7 +52,7 @@
   /* Typography */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-rtl: 'Cairo', 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-rtl: 'Noto Sans Arabic', 'Vazirmatn', 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Elevation */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -104,7 +104,9 @@
 /* ==========================================================================
    BASE & RESET STYLES (OVERFLOW-X HIDDEN)
    ========================================================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -131,10 +133,24 @@ body {
   min-height: 100vh;
 }
 
-/* RTL Support for Arabic and Kurdish */
-html[dir="rtl"] body {
-  font-family: var(--font-rtl);
+/* ==========================================================================
+   RTL, KURDISH & ARABIC TYPOGRAPHY & CHARACTER SHAPING
+   ========================================================================== */
+html[dir="rtl"],
+html[lang="ku"],
+html[lang="ar"],
+html[dir="rtl"] body,
+html[lang="ku"] body,
+html[lang="ar"] body {
+  font-family: var(--font-rtl) !important;
   text-align: right;
+}
+
+/* Crucial: Disable letter-spacing across all elements in RTL to preserve Kurdish/Arabic cursive connections */
+html[dir="rtl"] *,
+html[lang="ku"] *,
+html[lang="ar"] * {
+  letter-spacing: normal !important;
 }
 
 html[dir="rtl"] .font-heading,
@@ -143,9 +159,41 @@ html[dir="rtl"] h2,
 html[dir="rtl"] h3,
 html[dir="rtl"] h4,
 html[dir="rtl"] h5,
-html[dir="rtl"] h6 {
-  font-family: var(--font-rtl);
-  font-weight: 800;
+html[dir="rtl"] h6,
+html[dir="rtl"] .hero-headline,
+html[dir="rtl"] .brand-title,
+html[dir="rtl"] .section-eyebrow,
+html[dir="rtl"] .badge,
+html[dir="rtl"] .btn,
+html[dir="rtl"] button,
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select,
+html[lang="ku"] .font-heading,
+html[lang="ku"] h1,
+html[lang="ku"] h2,
+html[lang="ku"] h3,
+html[lang="ku"] h4,
+html[lang="ku"] h5,
+html[lang="ku"] h6,
+html[lang="ku"] .hero-headline,
+html[lang="ku"] .brand-title,
+html[lang="ku"] .section-eyebrow,
+html[lang="ku"] .badge,
+html[lang="ku"] .btn,
+html[lang="ku"] button,
+html[lang="ku"] input,
+html[lang="ku"] textarea,
+html[lang="ku"] select {
+  font-family: var(--font-rtl) !important;
+  letter-spacing: normal !important;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] .hero-headline,
+html[lang="ku"] h1,
+html[lang="ku"] .hero-headline {
+  line-height: 1.35 !important;
 }
 
 a {
@@ -160,7 +208,10 @@ img {
   display: block;
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font-family: inherit;
   font-size: inherit;
 }
@@ -175,7 +226,12 @@ button, input, textarea, select {
 }
 
 /* Typography Helpers */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--color-primary-dark);
   line-height: 1.25;
@@ -266,7 +322,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 48px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
   transition: transform var(--transition-fast);
 }
 
@@ -651,7 +707,8 @@ html[dir="rtl"] .lang-option-btn {
   width: min(340px, 86vw);
   height: 100vh;
   height: 100dvh;
-  background: #0b1329; /* Exact rich dark theme background requested */
+  background: #0b1329;
+  /* Exact rich dark theme background requested */
   border-left: 1px solid rgba(255, 255, 255, 0.12);
   padding: 1.5rem 1.25rem;
   display: flex;
@@ -750,7 +807,8 @@ html[dir="rtl"] .mobile-drawer.open {
 .mobile-drawer-link {
   display: flex;
   align-items: center;
-  min-height: 48px; /* Generous touch padding */
+  min-height: 48px;
+  /* Generous touch padding */
   padding: 0.85rem 1rem;
   border-radius: var(--radius-sm);
   color: #cbd5e1;
@@ -951,21 +1009,17 @@ html[dir="rtl"] .mobile-drawer-link.active {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(10, 24, 48, 0.92) 0%,
-    rgba(10, 24, 48, 0.8) 45%,
-    rgba(10, 24, 48, 0.45) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(10, 24, 48, 0.92) 0%,
+      rgba(10, 24, 48, 0.8) 45%,
+      rgba(10, 24, 48, 0.45) 100%);
 }
 
 html[dir="rtl"] .hero-overlay {
-  background: linear-gradient(
-    270deg,
-    rgba(10, 24, 48, 0.92) 0%,
-    rgba(10, 24, 48, 0.8) 45%,
-    rgba(10, 24, 48, 0.45) 100%
-  );
+  background: linear-gradient(270deg,
+      rgba(10, 24, 48, 0.92) 0%,
+      rgba(10, 24, 48, 0.8) 45%,
+      rgba(10, 24, 48, 0.45) 100%);
 }
 
 .hero-content-wrap {
@@ -996,7 +1050,7 @@ html[dir="rtl"] .hero-overlay {
   padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
   margin-bottom: 1.5rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-badge-dot {
@@ -1009,8 +1063,17 @@ html[dir="rtl"] .hero-overlay {
 }
 
 @keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.3); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(1.3);
+  }
 }
 
 .hero-headline {
@@ -1510,7 +1573,7 @@ html[dir="rtl"] .about-floating-card {
   bottom: -30px;
   width: 130px;
   height: 130px;
-  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
   border-radius: 50%;
 }
 
@@ -1663,7 +1726,8 @@ html[dir="rtl"] .about-floating-card {
   border-radius: var(--radius-sm);
   background: #ffffff;
   color: var(--text-main);
-  font-size: 16px; /* Prevents auto-zoom on iOS mobile browsers */
+  font-size: 16px;
+  /* Prevents auto-zoom on iOS mobile browsers */
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -2037,8 +2101,15 @@ html[dir="rtl"] .toast-container {
 }
 
 @keyframes slideToast {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==========================================================================
@@ -2277,6 +2348,7 @@ html[dir="rtl"] .toast-container {
    DESKTOPS & LAPTOPS (1024px and wider)
    -------------------------------------------------------------------------- */
 @media (min-width: 1024px) {
+
   /* Show center navigation links, desktop quote button & desktop dropdowns */
   .desktop-nav-wrap,
   nav[aria-label="Primary Navigation"] {
@@ -2358,6 +2430,7 @@ html[dir="rtl"] .toast-container {
    MOBILE & TABLET VIEWPORT (Under 1024px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1023.98px) {
+
   /* Strictly hide all desktop navigation elements */
   .desktop-nav-wrap,
   .desktop-nav,
@@ -2465,6 +2538,7 @@ html[dir="rtl"] .toast-container {
    TABLETS / iPADS (481px - 1023.98px)
    -------------------------------------------------------------------------- */
 @media (min-width: 481px) and (max-width: 1023.98px) {
+
   /* 2-column cards & grids on tablet */
   .stats-card-container {
     grid-template-columns: repeat(2, 1fr);
@@ -2888,18 +2962,33 @@ html[dir="rtl"] .toast-container {
 }
 
 @keyframes floatOrb1 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(150px, 200px) scale(1.15); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(150px, 200px) scale(1.15);
+  }
 }
 
 @keyframes floatOrb2 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-200px, -150px) scale(1.2); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-200px, -150px) scale(1.2);
+  }
 }
 
 @keyframes floatOrb3 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(250px, -250px) scale(0.9); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(250px, -250px) scale(0.9);
+  }
 }
 
 /* Ensure body and certain sections let the background show through in Dark Theme */
