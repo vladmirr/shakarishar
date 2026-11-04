@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // DOM Elements
   const header = document.getElementById('siteHeader');
   const siteHeaderLogo = document.getElementById('siteHeaderLogo');
+  const mobileDrawerLogo = document.getElementById('mobileDrawerLogo');
   const themeToggleBtn = document.getElementById('themeToggleBtn');
   const themeIcon = document.getElementById('themeIcon');
   const mobileThemeToggleBtn = document.getElementById('mobileThemeToggleBtn');
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileDrawer = document.getElementById('mobileDrawer');
   const mobileDrawerOverlay = document.getElementById('mobileDrawerOverlay');
   const mobileDrawerClose = document.getElementById('mobileDrawerClose');
-  const mobileNavLinks = document.querySelectorAll('.mobile-drawer-link, .drawer-quote-btn');
+  const mobileNavLinks = document.querySelectorAll('.mobile-drawer-link');
 
   const slides = document.querySelectorAll('.hero-slide');
   const sliderDots = document.querySelectorAll('.slider-dot');
@@ -167,6 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (siteHeaderLogo) {
       siteHeaderLogo.src = theme === 'dark' ? 'images/logo_dark.png' : 'images/logo_light.png';
+    }
+
+    if (mobileDrawerLogo) {
+      mobileDrawerLogo.src = 'images/logo_dark.png';
     }
 
     if (themeIcon) {
